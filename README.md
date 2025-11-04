@@ -28,7 +28,7 @@ This repository documents both theoretical and practical work in **networking an
 - **Shell scripting for Unix/Linux**: log viewing, file inspection, process management, user/group automation.
 - **DNS services** configuration on Solaris, Slackware, and Windows.
 - **Network analysis with Wireshark** (HTTP flows, TCP handshakes, encapsulation).
-- **Cloud computing** experiments with AWS EC2.
+- **Cloud computing** experiments with AWS EC2 and Azure SQL Database.
 
 The goal is to integrate **network design, system administration, and automation** in a lab setting that simulates real-world IT environments.
 
@@ -64,6 +64,7 @@ This repository can be used as:
 2. **Executable scripts** to automate administration tasks in Unix/Linux environments.
 3. **Network simulation files** (`.pkt` and `.pkz`) to replicate OSPF-based topologies in Cisco Packet Tracer.
 4. **Lab documentation** (in Spanish) for reproducing virtualization, DNS, and cloud-based experiments.
+5. **SQL-based environments** demonstrating database design, scripting, and cross-platform deployment.
 
 ---
 
@@ -79,6 +80,21 @@ This repository can be used as:
 
 - `pt-topologies/`
   Cisco Packet Tracer projects implementing OSPF, VLANs, and WAN links. Includes Santiago’s and Natalia’s implementations.
+
+- `db-sql/`
+  SQL database implementations developed for the **Databases and Network Protocols: Cloud and Virtual Integration** lab.
+  Includes cross-platform deployments on:
+
+  - **PostgreSQL (Slackware Linux):** Tourism Databases
+  - **Microsoft SQL Server (Windows Server 2025):** Calendar Databases
+  - **Azure SQL Database (Cloud):** Library Management System
+
+  Each subfolder contains structured SQL scripts for:
+
+  - Database and user creation
+  - Schema definition with PK/FK constraints
+  - Data population and verification
+  - Cloud connectivity and auditing via `sp_executesql` and `STRING_AGG`
 
 ---
 

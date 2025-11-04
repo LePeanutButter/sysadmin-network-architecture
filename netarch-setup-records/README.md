@@ -204,3 +204,65 @@ This lab reinforced both **logical network design** and **physical infrastructur
 - Integration of **DNS resolution, email, and web services** under unified domain management.
 - Practical exposure to **structured cabling standards** and **physical connectivity verification.**
 - Cross-analysis between **simulation (Packet Tracer)** and **real-world network traces (Wireshark).**
+
+---
+
+## Databases and Network Protocols
+
+This lab integrated **database management, protocol analysis, and cloud deployment**, emphasizing the relationship between **data infrastructure and network communication** in both local and virtualized environments.
+
+### Network Protocol Analysis
+
+Using **Wireshark**, students analyzed **DNS, HTTP, and Ethernet frames**, examining packet headers, TCP handshakes, and protocol encapsulation.
+
+- **DNS**: Queried domain `lh3.google.com`, identifying UDP transport, port 53, and IPv4 address resolution.
+- **HTTP**: Captured GET requests and `HTTP/1.1 200 OK` responses, examining fields like `Host`, `Cache-Control`, `ETag`, and `Content-Type`.
+- **Ethernet**: Reviewed MAC addressing, encapsulation, and protocol identification (IPv4 via 0x0800 type field).
+
+### Database Deployment in Virtualized Environments
+
+Three database platforms were installed and configured:
+
+- **PostgreSQL (Slackware Linux)**
+  Installed from source using SlackBuilds, initialized with `initdb`, and configured for user-specific access.
+  Each student created a database with relational tables (`departamentos`, `ciudades`, `lugares_turisticos`), managing users and privileges through SQL commands.
+
+- **SQL Server (Windows Server 2022)**
+  Installed via **SQL Server Express** and managed with **SQL Server Management Studio (SSMS)**.
+  Databases were created for each student (`Calendario_Laura`, `Calendario_Santiago`), including tables for `Categorías`, `Actividades`, and `Recordatorios`, with enforced relational integrity.
+
+- **Azure SQL Database (Microsoft Azure)**
+  Implemented under the **Azure for Students** program.
+  Explored **IaaS, PaaS, SaaS**, and **Serverless** models, along with **regions**, **availability zones**, and **scaling strategies** (horizontal vs. vertical).
+  Configured a relational schema (`books`, `articles`, `users`, `access_logs`), secured access via **TLS 1.2**, and connected remotely through PowerShell and DBeaver.
+
+> SQL schema and data scripts are stored in the [`/db-sql/`](./db-sql) folder, organized by platform:
+> `pg/` (PostgreSQL), `mssql/` (SQL Server), and `azure/` (Azure SQL Database).
+
+### System Integration and Automation
+
+Cross-platform access was configured using **DBeaver** to connect PostgreSQL and SQL Server remotely by enabling:
+
+- `pg_hba.conf` remote access in Slackware.
+- TCP/IP and port 1433 rules in Windows Firewall.
+- Automatic startup services for both database engines.
+
+### Cloud Infrastructure with Amazon EC2
+
+Students deployed **web servers** in **AWS EC2** using **Amazon Linux 2**:
+
+- Created **VPCs**, **subnets**, **internet gateways**, and **route tables**.
+- Configured **security groups** for HTTP/SSH access.
+- Deployed **Apache web servers** with custom HTML pages hosted publicly.
+- Explored **Elastic IP**, **scalability (Auto Scaling)**, **Amazon RDS**, and **security practices (IAM, GuardDuty, Network Firewall)**.
+- Compared **AWS hosting** vs. traditional hosting, emphasizing automation, scalability, and reliability.
+
+### Results and Learning Outcomes
+
+This lab provided an end-to-end view of **network communication, database management, and cloud infrastructure**, achieving:
+
+- Packet-level understanding of **DNS, HTTP, and Ethernet** communications.
+- Successful deployment of **PostgreSQL, SQL Server, and Azure SQL** in hybrid environments.
+- Practical use of **AWS EC2, VPCs, and Apache web servers**.
+- Integration of **security, scalability, and automation principles** across cloud and on-premise platforms.
+- Strengthened comprehension of **data transport, encryption (TLS), and virtual networking** within modern IT ecosystems.

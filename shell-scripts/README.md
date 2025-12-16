@@ -4,8 +4,6 @@ This folder contains a collection of Bash scripts designed to automate system ad
 
 The scripts are compatible with various Unix-like systems, including **Slackware, Solaris,** and other Linux distributions.
 
----
-
 ## Operating System Configuration, Shell, and Network Support Software
 
 This section covers work related to system administration, virtualization, and networking practices, with a focus on both Unix/Linux and Windows environments.
@@ -111,8 +109,6 @@ This script creates a new user with specific attributes, home directory, and per
 bash /path/create-user.sh username group description /home/username /bin/bash 700 770 755
 ```
 
----
-
 ## DNS Services Configuration and Task Automation Through Scripting in Virtualized Environments
 
 ### 1. `task-scheduler.sh`
@@ -212,7 +208,105 @@ bash /path/smallest-files-finder.sh 10 1MB
 
 This command finds the 10 smallest readable files under 1MB in the current directory tree.
 
----
+## Integration and Operation of LAN/WLAN Infrastructures and Application Layer Services
+
+### 1. `network_info_menu.sh`
+
+#### Description:
+
+An interactive Bash script that provides a **menu-driven interface** for collecting and displaying comprehensive **network-related information** on Unix-like systems. It centralizes access to key LAN/WLAN diagnostics, making it useful for **network administration, troubleshooting, and system monitoring**.
+
+The script is designed to operate across multiple platforms, adapting automatically to the availability of networking tools such as `ip`, `ifconfig`, `netstat`, `ethtool`, and `vnstat`.
+
+#### Features:
+
+- **Interactive menu interface** for easy navigation and operation.
+- **Cross-platform compatibility**, supporting Linux and other Unix-like systems (BSD, Solaris, AIX).
+- **Automatic command detection** with intelligent fallbacks when preferred tools are unavailable.
+- **Robust error handling** using `set -e` and traps to handle unexpected failures.
+- **Timestamped logging** for traceability of script execution.
+- **POSIX-compliant screen clearing** for consistent display behavior.
+
+#### Menu Options:
+
+1. **Show interfaces and IP addresses**
+   Displays all network interfaces along with their assigned IP addresses using `ip addr` or `ifconfig`.
+
+2. **Show routing table**
+   Outputs the system routing table, including default gateways, using `ip route` or `netstat`.
+
+3. **Show active network connections**
+   Lists current TCP and UDP connections and listening ports, falling back to compatible `netstat` formats when necessary.
+
+4. **Show interface statistics**
+   Displays detailed interface statistics using:
+
+   - `ethtool` (when available on Linux systems),
+   - `vnstat` for traffic monitoring,
+   - or `netstat -i` as a generic fallback.
+
+5. **Show summarized network report**
+   Generates a concise report including:
+
+   - Hostname
+   - System uptime
+   - Default gateway
+   - Active network interfaces with assigned IPv4 addresses
+
+6. **Exit**
+   Safely terminates the script execution.
+
+#### Example Usage:
+
+```bash
+bash /path/network_info_menu.sh
+```
+
+After launching, the user can select options from the menu to inspect LAN/WLAN interfaces, routing configuration, active connections, and overall network status in real time.
+
+Here is the **second script redacted in the same format, structure, and technical tone** as the first one, fully consistent with your example and ready to be placed directly after it.
+
+### 2. `port_check.sh`
+
+#### Description:
+
+A lightweight Bash script that checks whether a specified **TCP or UDP port** is open on the local host (`localhost / 127.0.0.1`) and attempts to **identify the associated service**. It is designed for **application-layer service verification** and basic LAN/WLAN troubleshooting.
+
+The script prioritizes modern tools when available and gracefully falls back to alternative methods to maintain compatibility across a wide range of Unix-like systems.
+
+#### Features:
+
+- Validates user input to ensure a **numeric port number** is provided.
+- Supports multiple port-checking methods with **automatic fallback**:
+
+  - `nc` (netcat) for fast socket probing.
+  - `nmap` for reliable port scanning.
+  - `telnet` for legacy compatibility.
+  - `netstat` for passive socket inspection.
+
+- Determines port status as **OPEN** or **CLOSED** on the local system.
+- Performs **service name resolution** by parsing:
+
+  - `/etc/services`
+  - `/etc/inet/services` (for Solaris compatibility)
+
+- Uses **pure shell parsing** for maximum portability.
+- Provides clear, timestamped logging output.
+
+#### Operation Workflow:
+
+1. The script validates the number and format of input arguments.
+2. It probes the specified port using the first available supported tool.
+3. If the port is open, it attempts to map the port number to a known service.
+4. Results are displayed clearly, indicating both port status and service name.
+
+#### Example Usage:
+
+```bash
+bash /path/port_check.sh 80
+```
+
+This command checks whether port **80** is open on the local machine and identifies the service commonly associated with it (e.g., HTTP).
 
 ### Requirements:
 

@@ -257,6 +257,98 @@ This lab provided an end-to-end view of **network communication, database manage
 - Integration of **security, scalability, and automation principles** across cloud and on-premise platforms.
 - Strengthened comprehension of **data transport, encryption (TLS), and virtual networking** within modern IT ecosystems.
 
+## Application Layer, Base Platform, and Network Layer Protocols
+
+This section presents the **implementation, analysis, and interaction** of **application-layer, base platform, and network-layer protocols** within heterogeneous environments, emphasizing how these layers collaborate to deliver **reliable, scalable, and observable network services**.
+
+The work integrates **routing protocols, web services, DNS resolution, transport reliability, and cloud-based monitoring**, using **Cisco Packet Tracer**, **Wireshark**, **Linux/Solaris systems**, **Windows Server**, and **Microsoft Azure** to demonstrate end-to-end communication from the network core to the application layer.
+
+### Network Layer Protocols and Routing Operations
+
+The network layer was implemented and validated through **IPv4 addressing, subnetting, and routing configuration** on Cisco routers:
+
+- Assignment of **IPv4 addresses**, subnet masks, gateways, and broadcast domains based on host requirements.
+- Implementation of **static routing** to enable communication between non-directly connected networks.
+- Deployment and comparison of **dynamic routing protocols (EIGRP and OSPF)** to evaluate convergence, scalability, and routing efficiency.
+- Verification of routing tables and path selection using commands such as `show ip route` and `tracert`.
+
+Connectivity was validated through **ICMP Echo Requests**, confirming full inter-network reachability and correct routing behavior across serial and Ethernet links.
+
+### Transport Layer Reliability and Process Communication
+
+The transport layer was analyzed with emphasis on **TCP-based communication** supporting web applications:
+
+- Observation of **TCP three-way handshakes**, sequence numbers, acknowledgments (ACKs), and retransmissions.
+- Analysis of **segmentation and reassembly**, ensuring correct delivery of application data.
+- Evaluation of **flow control and congestion control mechanisms**, highlighting their role in maintaining network stability under load.
+- Packet inspection with Wireshark to validate checksums and detect transmission errors.
+
+These mechanisms ensured **reliable, ordered, and loss-free data delivery** between clients and servers.
+
+### Application Layer Services and Web Protocols
+
+Multiple application-layer services were deployed across different operating systems:
+
+- Configuration of **Apache (Solaris)**, **Nginx (Slackware Linux)**, and **IIS (Windows Server)** as HTTP servers.
+- Creation of static and dynamic web pages to validate service availability.
+- Deployment of **PHP-enabled web applications** integrated with **PostgreSQL databases** for persistent data storage.
+- Testing of services using **curl**, web browsers, and DNS-based access.
+
+HTTP transactions were validated by inspecting **request methods (GET)**, **response codes (200 OK)**, and **HTTP headers**, confirming correct interpretation at the application layer.
+
+### DNS Resolution and Service Abstraction
+
+A **DNS service** was implemented to abstract IP addressing and improve usability:
+
+- Configuration of **zone files**, A records, and name resolution for web servers.
+- Validation of DNS functionality through forward lookups and service access via domain names.
+- Integration of DNS with web services to allow access using **human-readable hostnames** instead of IP addresses.
+
+This abstraction demonstrated the importance of DNS in **service scalability and administrative simplicity**.
+
+### Base Platform Services and System Integration
+
+Base platform services were configured to support application execution and persistence:
+
+- Installation and configuration of **PHP runtimes**, system libraries, and compilation dependencies.
+- Deployment of **PostgreSQL databases**, including schema creation, user management, and permission control.
+- Configuration of service startup and process management to ensure persistence across reboots.
+
+These components formed the foundation required for stable and secure application-layer operation.
+
+### Cloud Monitoring and Observability with Azure
+
+Cloud-based monitoring was implemented using **Azure Application Insights**:
+
+- Real-time observation of **request rates, response times, dependency calls, and resource usage (CPU and memory)**.
+- Analysis of application behavior under repeated client requests.
+- Visualization of application topology and external dependencies.
+- Use of telemetry data to identify performance bottlenecks and validate SLA compliance.
+
+This demonstrated how observability tools enhance **operational awareness and proactive management** in modern cloud environments.
+
+### Protocol Interaction and End-to-End Communication
+
+The interaction between layers was analyzed holistically:
+
+- **Network layer (IP)** ensured logical addressing and routing across geographic locations.
+- **Transport layer (TCP)** guaranteed reliable delivery and error handling.
+- **Application layer (HTTP, DNS)** enabled correct request interpretation, session handling, and content delivery.
+
+Experiments using **ICMP (ping, tracert)** illustrated real-world routing paths, latency, and intermediary network behavior, reinforcing the layered model of communication.
+
+### Results and Learning Outcomes
+
+This section achieved a comprehensive understanding of protocol integration across layers:
+
+- Successful configuration of **routing, transport, and application-layer protocols**.
+- Practical deployment of **web servers, databases, and DNS services** across multiple platforms.
+- Deep analysis of **TCP/IP behavior** using packet capture tools.
+- Integration of **cloud observability** into traditional network and application deployments.
+- Clear demonstration of how **layered protocols cooperate** to deliver reliable, secure, and scalable services.
+
+This work highlights the critical role of **protocol interoperability and platform integration** in enterprise and cloud-based network architectures.
+
 ## Integration and Operation of LAN/WLAN Infrastructures and Application Layer Services
 
 This section documents the **design, configuration, and operational integration** of **wired (LAN) and wireless (WLAN) network infrastructures** with **application-layer services**, combining **logical segmentation**, **physical connectivity**, and **service deployment** in both simulated and real environments.

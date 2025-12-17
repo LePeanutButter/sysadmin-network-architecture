@@ -96,6 +96,63 @@ This ensures a cohesive understanding of how physical standards interact with ap
 - Hands-on validation of **protocol encapsulation, service resolution, and inter-domain communication.**
 - Reinforcement of **structured cabling knowledge** aligned with TIA/EIA standards.
 
+## Application Layer, Base Platform, and Network Layer Protocols
+
+This section documents the **Packet Tracer simulations** developed for the _Application Layer, Base Platform, and Network Layer Protocols_ lab. The objective was to implement and validate a routed network using **static routing**, IPv4 addressing, and secure router configuration, ensuring reliable communication between multiple local and remote networks connected through a serial WAN link.
+
+Two independent implementations were created by different group members, each following the same planned topology and configuration methodology. This parallel development allowed for verification of consistency, correctness, and proper network operation.
+
+### Overview
+
+Two Packet Tracer files were developed, each representing a complete and functional implementation of the routing scenario:
+
+1. **Santiago’s Routing Implementation**
+   Filename: `santiago-routing-implementation.pkt`
+   This file contains the full configuration of routers and end devices, including physical connectivity, IPv4 addressing, interface descriptions, security settings, static routes, and WAN serial link configuration. Connectivity between all networks is validated through ICMP testing.
+
+2. **Natalia’s Routing Implementation**
+   Filename: `natalia-routing-implementation.pkt`
+   This file represents an independent implementation of the same topology. It includes equivalent router configurations, static routing logic, serial communication setup, and verification of end-to-end connectivity across multiple IPv4 networks.
+
+### Network Design Summary
+
+Both implementations follow the same logical design principles:
+
+- End devices are connected to routers using **copper straight-through cables**.
+- Routers are interconnected using a **serial DCE/DTE link** to simulate WAN communication.
+- Each LAN is assigned a unique IPv4 network and default gateway.
+- **Static routes** are configured on each router to enable communication with non-directly connected networks.
+
+Interface descriptions are applied consistently to improve readability and maintenance, and configurations are saved to startup memory to ensure persistence after device restarts.
+
+### Actions Performed
+
+- **Physical Topology Implementation:**
+  PCs were connected to routers using appropriate Ethernet cabling, and routers were interconnected via a serial link. Console access was used for initial device configuration.
+
+- **Router Base Configuration:**
+  Hostnames, messages of the day (MOTD), console and VTY passwords, privileged EXEC security, and usability enhancements such as disabling domain lookup were applied.
+
+- **Interface Configuration:**
+  IPv4 addresses, subnet masks, and interface descriptions were configured on all GigabitEthernet and Serial interfaces. Serial interfaces were enabled and synchronized using clock rate configuration where required.
+
+- **Static Routing Configuration:**
+  Static routes were added on each router to define paths to remote networks, either by specifying the next-hop IP address or the outgoing interface, depending on the design.
+
+- **End Device Configuration:**
+  PCs were manually assigned IPv4 addresses, subnet masks, and default gateways according to their respective LANs.
+
+- **Connectivity Verification:**
+  Network functionality was validated using ICMP ping tests between local and remote hosts, confirming correct routing and full inter-network communication.
+
+### Results and Learning Outcomes
+
+- Successful deployment of **static routing** across multiple interconnected IPv4 networks.
+- Correct configuration of **router security**, interface documentation, and IP addressing.
+- Functional **serial WAN communication** between routers using DCE/DTE configuration.
+- Verified **end-to-end connectivity** between all PCs in the topology.
+- Reinforced understanding of **Application Layer interaction**, **Base Platform configuration**, and **Network Layer routing behavior** within a Cisco Packet Tracer environment.
+
 ## Integration and Operation of LAN/WLAN Infrastructures and Application Layer Services
 
 This section documents the **Packet Tracer simulations** developed for the _Integration and Operation of LAN/WLAN Infrastructures and Application Layer Services_ lab. The goal was to implement **complex wired and wireless networks**, configure VLANs, DHCP services, and wireless security, and verify connectivity, traffic flow, and loop prevention across all devices.
